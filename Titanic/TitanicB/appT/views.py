@@ -34,8 +34,7 @@ class TitanicView(APIView):
 
     def post(self, request, format=None):
         try:
-            #mdl = pickle.load(open("C:\Z Folders\Project\Django Project\Titanic\TitanicB\appT\pklModel.pkl", 'rb'))
-            print("\n\nSerializers value is {}".format(TitanicSerializer(data=request.data)))
+            
             mdl = pickle.load(open("appT/pklModel.pkl", 'rb'))
             data = request.data
             features = [[data.get("age"), data.get("fare"), data.get("pclass"), data.get("gender"), data.get("sbsp"), data.get("parch"), data.get("cabin"), data.get("embarked")]]            
